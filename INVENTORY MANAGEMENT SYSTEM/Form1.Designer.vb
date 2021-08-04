@@ -72,6 +72,13 @@ Partial Class Form1
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.CUSTOMER_DETAILSBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
+        Me.cmbSearch = New System.Windows.Forms.ToolStripComboBox()
+        Me.txtSearch = New System.Windows.Forms.ToolStripTextBox()
+        Me.btnSearch = New System.Windows.Forms.ToolStripButton()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.TabPage6 = New System.Windows.Forms.TabPage()
         Me.CUSTOMER_DETAILSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SHOPDataSet = New INVENTORY_MANAGEMENT_SYSTEM.SHOPDataSet()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -82,10 +89,6 @@ Partial Class Form1
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CUSTOMER_DETAILSTableAdapter = New INVENTORY_MANAGEMENT_SYSTEM.SHOPDataSetTableAdapters.CUSTOMER_DETAILSTableAdapter()
         Me.TableAdapterManager = New INVENTORY_MANAGEMENT_SYSTEM.SHOPDataSetTableAdapters.TableAdapterManager()
-        Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
-        Me.cmbSearch = New System.Windows.Forms.ToolStripComboBox()
-        Me.txtSearch = New System.Windows.Forms.ToolStripTextBox()
-        Me.btnSearch = New System.Windows.Forms.ToolStripButton()
         CUSTOMER_IDLabel = New System.Windows.Forms.Label()
         TITLELabel = New System.Windows.Forms.Label()
         FIRSTNAMELabel = New System.Windows.Forms.Label()
@@ -98,6 +101,7 @@ Partial Class Form1
         Me.GroupBox1.SuspendLayout()
         CType(Me.CUSTOMER_DETAILSBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CUSTOMER_DETAILSBindingNavigator.SuspendLayout()
+        Me.TabControl1.SuspendLayout()
         CType(Me.CUSTOMER_DETAILSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SHOPDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -163,10 +167,10 @@ Partial Class Form1
         Me.TabControl2.Controls.Add(Me.TabPage3)
         Me.TabControl2.Controls.Add(Me.TabPage4)
         Me.TabControl2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TabControl2.Location = New System.Drawing.Point(12, 286)
+        Me.TabControl2.Location = New System.Drawing.Point(8, 296)
         Me.TabControl2.Name = "TabControl2"
         Me.TabControl2.SelectedIndex = 0
-        Me.TabControl2.Size = New System.Drawing.Size(1018, 371)
+        Me.TabControl2.Size = New System.Drawing.Size(1018, 208)
         Me.TabControl2.TabIndex = 0
         '
         'TabPage1
@@ -195,7 +199,7 @@ Partial Class Form1
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1010, 345)
+        Me.TabPage1.Size = New System.Drawing.Size(1010, 182)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "CUSTOMER DETAILS"
         '
@@ -318,7 +322,7 @@ Partial Class Form1
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1010, 345)
+        Me.TabPage2.Size = New System.Drawing.Size(1010, 182)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "PRODUCT DETAILS"
         '
@@ -328,7 +332,7 @@ Partial Class Form1
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(1010, 345)
+        Me.TabPage3.Size = New System.Drawing.Size(1010, 182)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "PRODUCT ORDER"
         '
@@ -338,7 +342,7 @@ Partial Class Form1
         Me.TabPage4.Location = New System.Drawing.Point(4, 22)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(1010, 345)
+        Me.TabPage4.Size = New System.Drawing.Size(1010, 182)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "PRODUCT CATALOG"
         '
@@ -354,9 +358,9 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(Me.lblPassword)
         Me.GroupBox1.Controls.Add(Me.lblDepartment)
         Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Location = New System.Drawing.Point(16, 29)
+        Me.GroupBox1.Location = New System.Drawing.Point(8, 29)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1010, 624)
+        Me.GroupBox1.Size = New System.Drawing.Size(1018, 617)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         '
@@ -370,9 +374,10 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(57, 161)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(55, 13)
+        Me.Label1.Size = New System.Drawing.Size(79, 16)
         Me.Label1.TabIndex = 14
         Me.Label1.Text = "Username"
         '
@@ -393,27 +398,30 @@ Partial Class Form1
         '
         'btnExit
         '
+        Me.btnExit.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnExit.Location = New System.Drawing.Point(349, 267)
         Me.btnExit.Name = "btnExit"
-        Me.btnExit.Size = New System.Drawing.Size(75, 23)
+        Me.btnExit.Size = New System.Drawing.Size(91, 23)
         Me.btnExit.TabIndex = 1
         Me.btnExit.Text = "Exit"
         Me.btnExit.UseVisualStyleBackColor = True
         '
         'btnReset
         '
+        Me.btnReset.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReset.Location = New System.Drawing.Point(181, 267)
         Me.btnReset.Name = "btnReset"
-        Me.btnReset.Size = New System.Drawing.Size(75, 23)
+        Me.btnReset.Size = New System.Drawing.Size(91, 23)
         Me.btnReset.TabIndex = 1
         Me.btnReset.Text = "Reset"
         Me.btnReset.UseVisualStyleBackColor = True
         '
         'btnPassword
         '
+        Me.btnPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPassword.Location = New System.Drawing.Point(44, 267)
         Me.btnPassword.Name = "btnPassword"
-        Me.btnPassword.Size = New System.Drawing.Size(75, 23)
+        Me.btnPassword.Size = New System.Drawing.Size(91, 23)
         Me.btnPassword.TabIndex = 1
         Me.btnPassword.Text = "Password"
         Me.btnPassword.UseVisualStyleBackColor = True
@@ -421,18 +429,20 @@ Partial Class Form1
         'lblPassword
         '
         Me.lblPassword.AutoSize = True
+        Me.lblPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPassword.Location = New System.Drawing.Point(57, 200)
         Me.lblPassword.Name = "lblPassword"
-        Me.lblPassword.Size = New System.Drawing.Size(53, 13)
+        Me.lblPassword.Size = New System.Drawing.Size(76, 16)
         Me.lblPassword.TabIndex = 0
         Me.lblPassword.Text = "Password"
         '
         'lblDepartment
         '
         Me.lblDepartment.AutoSize = True
+        Me.lblDepartment.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDepartment.Location = New System.Drawing.Point(57, 95)
         Me.lblDepartment.Name = "lblDepartment"
-        Me.lblDepartment.Size = New System.Drawing.Size(62, 13)
+        Me.lblDepartment.Size = New System.Drawing.Size(88, 16)
         Me.lblDepartment.TabIndex = 0
         Me.lblDepartment.Text = "Department"
         '
@@ -558,6 +568,65 @@ Partial Class Form1
         Me.CUSTOMER_DETAILSBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 22)
         Me.CUSTOMER_DETAILSBindingNavigatorSaveItem.Text = "Save Data"
         '
+        'ToolStripLabel1
+        '
+        Me.ToolStripLabel1.Name = "ToolStripLabel1"
+        Me.ToolStripLabel1.Size = New System.Drawing.Size(42, 22)
+        Me.ToolStripLabel1.Text = "Search"
+        '
+        'cmbSearch
+        '
+        Me.cmbSearch.Name = "cmbSearch"
+        Me.cmbSearch.Size = New System.Drawing.Size(121, 25)
+        '
+        'txtSearch
+        '
+        Me.txtSearch.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.Size = New System.Drawing.Size(100, 25)
+        '
+        'btnSearch
+        '
+        Me.btnSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.btnSearch.Image = CType(resources.GetObject("btnSearch.Image"), System.Drawing.Image)
+        Me.btnSearch.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(23, 22)
+        Me.btnSearch.Text = "Search"
+        '
+        'TabControl1
+        '
+        Me.TabControl1.Controls.Add(Me.TabPage5)
+        Me.TabControl1.Controls.Add(Me.TabPage6)
+        Me.TabControl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TabControl1.Location = New System.Drawing.Point(12, 546)
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        Me.TabControl1.Size = New System.Drawing.Size(1014, 100)
+        Me.TabControl1.TabIndex = 13
+        '
+        'TabPage5
+        '
+        Me.TabPage5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TabPage5.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage5.Name = "TabPage5"
+        Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage5.Size = New System.Drawing.Size(1006, 71)
+        Me.TabPage5.TabIndex = 0
+        Me.TabPage5.Text = "PRODUCT ORDERS"
+        Me.TabPage5.UseVisualStyleBackColor = True
+        '
+        'TabPage6
+        '
+        Me.TabPage6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TabPage6.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage6.Name = "TabPage6"
+        Me.TabPage6.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage6.Size = New System.Drawing.Size(1006, 71)
+        Me.TabPage6.TabIndex = 1
+        Me.TabPage6.Text = "PRODUCT CATALOG"
+        Me.TabPage6.UseVisualStyleBackColor = True
+        '
         'CUSTOMER_DETAILSBindingSource
         '
         Me.CUSTOMER_DETAILSBindingSource.DataMember = "CUSTOMER DETAILS"
@@ -617,32 +686,6 @@ Partial Class Form1
         Me.TableAdapterManager.PRODUCT_ORDERSTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = INVENTORY_MANAGEMENT_SYSTEM.SHOPDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'ToolStripLabel1
-        '
-        Me.ToolStripLabel1.Name = "ToolStripLabel1"
-        Me.ToolStripLabel1.Size = New System.Drawing.Size(42, 22)
-        Me.ToolStripLabel1.Text = "Search"
-        '
-        'cmbSearch
-        '
-        Me.cmbSearch.Name = "cmbSearch"
-        Me.cmbSearch.Size = New System.Drawing.Size(121, 25)
-        '
-        'txtSearch
-        '
-        Me.txtSearch.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(100, 25)
-        '
-        'btnSearch
-        '
-        Me.btnSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.btnSearch.Image = CType(resources.GetObject("btnSearch.Image"), System.Drawing.Image)
-        Me.btnSearch.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(23, 22)
-        Me.btnSearch.Text = "ToolStripButton1"
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -651,6 +694,7 @@ Partial Class Form1
         Me.Controls.Add(Me.CUSTOMER_DETAILSBindingNavigator)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.TabControl2)
+        Me.Controls.Add(Me.TabControl1)
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.TabControl2.ResumeLayout(False)
@@ -662,6 +706,7 @@ Partial Class Form1
         CType(Me.CUSTOMER_DETAILSBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.CUSTOMER_DETAILSBindingNavigator.ResumeLayout(False)
         Me.CUSTOMER_DETAILSBindingNavigator.PerformLayout()
+        Me.TabControl1.ResumeLayout(False)
         CType(Me.CUSTOMER_DETAILSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SHOPDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -725,4 +770,7 @@ Partial Class Form1
     Friend WithEvents cmbSearch As ToolStripComboBox
     Friend WithEvents txtSearch As ToolStripTextBox
     Friend WithEvents btnSearch As ToolStripButton
+    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents TabPage5 As TabPage
+    Friend WithEvents TabPage6 As TabPage
 End Class

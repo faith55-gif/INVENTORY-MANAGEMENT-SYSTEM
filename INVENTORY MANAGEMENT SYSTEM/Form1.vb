@@ -15,7 +15,7 @@
         If cmbUserName.Text = "Manager" And txtPassword.Text = "CapeNexis" And txtUsername.Text = "Manager" Then
 
             TabControl2.Show()
-            TabControl2.Visible = False
+            TabControl1.Visible = False
             GroupBox1.Visible = False
         ElseIf cmbUserName.Text = "Cashier" And txtPassword.Text = "CapeNexis" And txtUsername.Text = "Cashier" Then
             TabControl2.Show()
@@ -24,7 +24,7 @@
 
         ElseIf cmbUserName.Text = "Stock Controller" And txtPassword.Text = "CapeNexis" And txtUsername.Text = "Stock Controller" Then
             TabControl2.Show()
-            TabControl2.Visible = False
+            TabControl1.Visible = False
             GroupBox1.Visible = False
         Else
 
@@ -61,10 +61,19 @@
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'SHOPDataSet.CUSTOMER_DETAILS' table. You can move, or remove it, as needed.
         Me.CUSTOMER_DETAILSTableAdapter.Fill(Me.SHOPDataSet.CUSTOMER_DETAILS)
+        'TODO: This line of code loads data into the 'SHOPDataSet.PRODUCT_DETAILS' table. You can move, or remove it, as needed.
+
 
         cmbUserName.Items.Add("Manager")
         cmbUserName.Items.Add("Cashier")
         cmbUserName.Items.Add("Stock Controller")
+
+        cmbSearch.Items.Add("CUSTOMER ID")
+        cmbSearch.Items.Add("TITLE")
+        cmbSearch.Items.Add("FIRSTNAME")
+        cmbSearch.Items.Add("LASTNAME")
+        cmbSearch.Items.Add("ADDRESS")
+        cmbSearch.Items.Add("PHONE NUMBER")
 
     End Sub
 
@@ -108,6 +117,32 @@
 Feedback:
         MsgBox("Check your Record", vbInformation)
         Exit Sub
+    End Sub
+
+    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+
+        Dim stock As String
+        stock = cmbSearch.Text
+
+        Select Case stock
+
+            Case "CUSTOMER ID"
+                Me.CUSTOMER_DETAILSBindingSource.Filter = "CUSTOMER ID ='" & txtSearch.Text & "'"
+            Case "TITLE"
+                Me.CUSTOMER_DETAILSBindingSource.Filter = "TITLE='" & txtSearch.Text & "'"
+            Case "FIRST NAME"
+                Me.CUSTOMER_DETAILSBindingSource.Filter = "FIRSTNAME='" & txtSearch.Text & "'"
+            Case "LAST NAME"
+                Me.CUSTOMER_DETAILSBindingSource.Filter = "LASTNAME ='" & txtSearch.Text & "'"
+            Case "ADRESS"
+                Me.CUSTOMER_DETAILSBindingSource.Filter = "ADRESS ='" & txtSearch.Text & "'"
+            Case "PHONE NUMBER"
+                Me.CUSTOMER_DETAILSBindingSource.Filter = "PHONE NUMBER='" & txtSearch.Text & "'"
+            Case Else
+                Exit Select
+        End Select
+
+
     End Sub
 End Class
 
