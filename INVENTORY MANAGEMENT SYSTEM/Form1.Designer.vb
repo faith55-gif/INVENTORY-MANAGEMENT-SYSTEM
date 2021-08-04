@@ -82,6 +82,10 @@ Partial Class Form1
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CUSTOMER_DETAILSTableAdapter = New INVENTORY_MANAGEMENT_SYSTEM.SHOPDataSetTableAdapters.CUSTOMER_DETAILSTableAdapter()
         Me.TableAdapterManager = New INVENTORY_MANAGEMENT_SYSTEM.SHOPDataSetTableAdapters.TableAdapterManager()
+        Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
+        Me.cmbSearch = New System.Windows.Forms.ToolStripComboBox()
+        Me.txtSearch = New System.Windows.Forms.ToolStripTextBox()
+        Me.btnSearch = New System.Windows.Forms.ToolStripButton()
         CUSTOMER_IDLabel = New System.Windows.Forms.Label()
         TITLELabel = New System.Windows.Forms.Label()
         FIRSTNAMELabel = New System.Windows.Forms.Label()
@@ -352,7 +356,7 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Location = New System.Drawing.Point(16, 29)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1014, 651)
+        Me.GroupBox1.Size = New System.Drawing.Size(1010, 624)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         '
@@ -448,7 +452,7 @@ Partial Class Form1
         Me.CUSTOMER_DETAILSBindingNavigator.BindingSource = Me.CUSTOMER_DETAILSBindingSource
         Me.CUSTOMER_DETAILSBindingNavigator.CountItem = Me.BindingNavigatorCountItem
         Me.CUSTOMER_DETAILSBindingNavigator.DeleteItem = Me.BindingNavigatorDeleteItem
-        Me.CUSTOMER_DETAILSBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.CUSTOMER_DETAILSBindingNavigatorSaveItem})
+        Me.CUSTOMER_DETAILSBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.CUSTOMER_DETAILSBindingNavigatorSaveItem, Me.ToolStripLabel1, Me.cmbSearch, Me.txtSearch, Me.btnSearch})
         Me.CUSTOMER_DETAILSBindingNavigator.Location = New System.Drawing.Point(0, 0)
         Me.CUSTOMER_DETAILSBindingNavigator.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
         Me.CUSTOMER_DETAILSBindingNavigator.MoveLastItem = Me.BindingNavigatorMoveLastItem
@@ -613,6 +617,32 @@ Partial Class Form1
         Me.TableAdapterManager.PRODUCT_ORDERSTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = INVENTORY_MANAGEMENT_SYSTEM.SHOPDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
+        'ToolStripLabel1
+        '
+        Me.ToolStripLabel1.Name = "ToolStripLabel1"
+        Me.ToolStripLabel1.Size = New System.Drawing.Size(42, 22)
+        Me.ToolStripLabel1.Text = "Search"
+        '
+        'cmbSearch
+        '
+        Me.cmbSearch.Name = "cmbSearch"
+        Me.cmbSearch.Size = New System.Drawing.Size(121, 25)
+        '
+        'txtSearch
+        '
+        Me.txtSearch.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.Size = New System.Drawing.Size(100, 25)
+        '
+        'btnSearch
+        '
+        Me.btnSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.btnSearch.Image = CType(resources.GetObject("btnSearch.Image"), System.Drawing.Image)
+        Me.btnSearch.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(23, 22)
+        Me.btnSearch.Text = "ToolStripButton1"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -691,4 +721,8 @@ Partial Class Form1
     Friend WithEvents cmbUserName As ComboBox
     Friend WithEvents Label1 As Label
     Friend WithEvents txtUserName As TextBox
+    Friend WithEvents ToolStripLabel1 As ToolStripLabel
+    Friend WithEvents cmbSearch As ToolStripComboBox
+    Friend WithEvents txtSearch As ToolStripTextBox
+    Friend WithEvents btnSearch As ToolStripButton
 End Class
