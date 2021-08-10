@@ -39,6 +39,14 @@ Partial Class Form1
         Me.btnNext = New System.Windows.Forms.Button()
         Me.btnADD = New System.Windows.Forms.Button()
         Me.CUSTOMER_DETAILSDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CUSTOMER_DETAILSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SHOPDataSet = New INVENTORY_MANAGEMENT_SYSTEM.SHOPDataSet()
         Me.CUSTOMER_IDTextBox = New System.Windows.Forms.TextBox()
         Me.TITLETextBox = New System.Windows.Forms.TextBox()
         Me.FIRSTNAMETextBox = New System.Windows.Forms.TextBox()
@@ -79,14 +87,6 @@ Partial Class Form1
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.TabPage6 = New System.Windows.Forms.TabPage()
-        Me.CUSTOMER_DETAILSBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.SHOPDataSet = New INVENTORY_MANAGEMENT_SYSTEM.SHOPDataSet()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CUSTOMER_DETAILSTableAdapter = New INVENTORY_MANAGEMENT_SYSTEM.SHOPDataSetTableAdapters.CUSTOMER_DETAILSTableAdapter()
         Me.TableAdapterManager = New INVENTORY_MANAGEMENT_SYSTEM.SHOPDataSetTableAdapters.TableAdapterManager()
         CUSTOMER_IDLabel = New System.Windows.Forms.Label()
@@ -98,12 +98,12 @@ Partial Class Form1
         Me.TabControl2.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.CUSTOMER_DETAILSDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CUSTOMER_DETAILSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SHOPDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.CUSTOMER_DETAILSBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CUSTOMER_DETAILSBindingNavigator.SuspendLayout()
         Me.TabControl1.SuspendLayout()
-        CType(Me.CUSTOMER_DETAILSBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SHOPDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'CUSTOMER_IDLabel
@@ -267,6 +267,52 @@ Partial Class Form1
         Me.CUSTOMER_DETAILSDataGridView.Name = "CUSTOMER_DETAILSDataGridView"
         Me.CUSTOMER_DETAILSDataGridView.Size = New System.Drawing.Size(642, 149)
         Me.CUSTOMER_DETAILSDataGridView.TabIndex = 12
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "CUSTOMER ID"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "CUSTOMER ID"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "TITLE"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "TITLE"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "FIRSTNAME"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "FIRSTNAME"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "LASTNAME"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "LASTNAME"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "ADDRESS"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "ADDRESS"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.DataPropertyName = "PHONE NUMBER"
+        Me.DataGridViewTextBoxColumn6.HeaderText = "PHONE NUMBER"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        '
+        'CUSTOMER_DETAILSBindingSource
+        '
+        Me.CUSTOMER_DETAILSBindingSource.DataMember = "CUSTOMER DETAILS"
+        Me.CUSTOMER_DETAILSBindingSource.DataSource = Me.SHOPDataSet
+        '
+        'SHOPDataSet
+        '
+        Me.SHOPDataSet.DataSetName = "SHOPDataSet"
+        Me.SHOPDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'CUSTOMER_IDTextBox
         '
@@ -526,7 +572,6 @@ Partial Class Form1
         '
         Me.BindingNavigatorPositionItem.AccessibleName = "Position"
         Me.BindingNavigatorPositionItem.AutoSize = False
-        Me.BindingNavigatorPositionItem.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
         Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 23)
         Me.BindingNavigatorPositionItem.Text = "0"
@@ -581,7 +626,6 @@ Partial Class Form1
         '
         'txtSearch
         '
-        Me.txtSearch.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtSearch.Name = "txtSearch"
         Me.txtSearch.Size = New System.Drawing.Size(100, 25)
         '
@@ -627,52 +671,6 @@ Partial Class Form1
         Me.TabPage6.Text = "PRODUCT CATALOG"
         Me.TabPage6.UseVisualStyleBackColor = True
         '
-        'CUSTOMER_DETAILSBindingSource
-        '
-        Me.CUSTOMER_DETAILSBindingSource.DataMember = "CUSTOMER DETAILS"
-        Me.CUSTOMER_DETAILSBindingSource.DataSource = Me.SHOPDataSet
-        '
-        'SHOPDataSet
-        '
-        Me.SHOPDataSet.DataSetName = "SHOPDataSet"
-        Me.SHOPDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "CUSTOMER ID"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "CUSTOMER ID"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "TITLE"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "TITLE"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "FIRSTNAME"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "FIRSTNAME"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "LASTNAME"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "LASTNAME"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "ADDRESS"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "ADDRESS"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "PHONE NUMBER"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "PHONE NUMBER"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        '
         'CUSTOMER_DETAILSTableAdapter
         '
         Me.CUSTOMER_DETAILSTableAdapter.ClearBeforeFill = True
@@ -695,20 +693,22 @@ Partial Class Form1
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.TabControl2)
         Me.Controls.Add(Me.TabControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "SHOP INVENTORY"
         Me.TabControl2.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         CType(Me.CUSTOMER_DETAILSDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CUSTOMER_DETAILSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SHOPDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.CUSTOMER_DETAILSBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.CUSTOMER_DETAILSBindingNavigator.ResumeLayout(False)
         Me.CUSTOMER_DETAILSBindingNavigator.PerformLayout()
         Me.TabControl1.ResumeLayout(False)
-        CType(Me.CUSTOMER_DETAILSBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SHOPDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
